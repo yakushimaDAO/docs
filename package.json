@@ -1,0 +1,24 @@
+{
+  "name": "nuxt-content-docs-theme-playground",
+  "version": "1.0.0",
+  "description": "Demonstration of @nuxt/content-theme-docs.\n\nhttps://content.nuxtjs.org/theme-docs",
+  "author": "Nuxt.js Team",
+  "private": true,
+  "scripts": {
+    "dev": "MINIMAL=1 CSB=1 nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "post-update": "yarn upgrade --latest"
+  },
+  "dependencies": {
+    "@nuxt/content-theme-docs": "0.7.2",
+    "nuxt": "2.14.7"
+  },
+  "keywords": [
+    "nuxt-theme-docs",
+    "nuxt-module",
+    "nuxt",
+    "nuxt/content"
+  ]
+}
