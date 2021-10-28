@@ -1,0 +1,20 @@
+[
+  {
+    "name": "releases___en",
+    "path": "/releases",
+    "component": "/Users/kevin/yakuDocs/node_modules/@nuxt/content-theme-docs/src/pages/releases.vue",
+    "chunkName": "pages/releases"
+  },
+  {
+    "name": "index___en",
+    "path": "/",
+    "component": "/Users/kevin/yakuDocs/node_modules/@nuxt/content-theme-docs/src/pages/_.vue",
+    "chunkName": "pages/_"
+  },
+  {
+    "name": "all___en",
+    "path": "/*",
+    "component": "/Users/kevin/yakuDocs/node_modules/@nuxt/content-theme-docs/src/pages/_.vue",
+    "chunkName": "pages/_"
+  }
+]
