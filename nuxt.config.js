@@ -7,6 +7,8 @@ export default theme({
    */
    css: [
     '@@/assets/main.css'
-  ]
+  ],
+  docs: {
+    primaryColor: '#f38aff'
+  },
 });
-

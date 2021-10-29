@@ -3,18 +3,21 @@
     "name": "releases___en",
     "path": "/releases",
     "component": "/Users/kevin/yakuDocs/node_modules/@nuxt/content-theme-docs/src/pages/releases.vue",
-    "chunkName": "pages/releases"
+    "chunkName": "pages/releases",
+    "_name": "_2373cf39"
   },
   {
     "name": "index___en",
     "path": "/",
     "component": "/Users/kevin/yakuDocs/node_modules/@nuxt/content-theme-docs/src/pages/_.vue",
-    "chunkName": "pages/_"
+    "chunkName": "pages/_",
+    "_name": "_09c9707c"
   },
   {
     "name": "all___en",
     "path": "/*",
     "component": "/Users/kevin/yakuDocs/node_modules/@nuxt/content-theme-docs/src/pages/_.vue",
-    "chunkName": "pages/_"
+    "chunkName": "pages/_",
+    "_name": "_09c9707c"
   }
 ]

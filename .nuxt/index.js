@@ -16,11 +16,12 @@ import { createStore } from './store.js'
 import nuxt_plugin_plugin_7ccf0abd from 'nuxt_plugin_plugin_7ccf0abd' // Source: ./components/plugin.js (mode: 'all')
 import nuxt_plugin_pluginclient_22232fb9 from 'nuxt_plugin_pluginclient_22232fb9' // Source: ./content/plugin.client.js (mode: 'client')
 import nuxt_plugin_pluginserver_f046bd7e from 'nuxt_plugin_pluginserver_f046bd7e' // Source: ./content/plugin.server.js (mode: 'server')
+import nuxt_plugin_pluginutils_fc179570 from 'nuxt_plugin_pluginutils_fc179570' // Source: ./nuxt-i18n/plugin.utils.js (mode: 'all')
 import nuxt_plugin_pluginrouting_e886deda from 'nuxt_plugin_pluginrouting_e886deda' // Source: ./nuxt-i18n/plugin.routing.js (mode: 'all')
 import nuxt_plugin_pluginmain_55595bbc from 'nuxt_plugin_pluginmain_55595bbc' // Source: ./nuxt-i18n/plugin.main.js (mode: 'all')
 import nuxt_plugin_workbox_05ddd4a2 from 'nuxt_plugin_workbox_05ddd4a2' // Source: ./workbox.js (mode: 'client')
-import nuxt_plugin_meta_387c672b from 'nuxt_plugin_meta_387c672b' // Source: ./pwa/meta.js (mode: 'all')
-import nuxt_plugin_icons_73e67338 from 'nuxt_plugin_icons_73e67338' // Source: ./pwa/icons.js (mode: 'all')
+import nuxt_plugin_metaplugin_154d3dc2 from 'nuxt_plugin_metaplugin_154d3dc2' // Source: ./pwa/meta.plugin.js (mode: 'all')
+import nuxt_plugin_iconplugin_19f4e336 from 'nuxt_plugin_iconplugin_19f4e336' // Source: ./pwa/icon.plugin.js (mode: 'all')
 import nuxt_plugin_pluginserver_d17623ee from 'nuxt_plugin_pluginserver_d17623ee' // Source: ./color-mode/plugin.server.js (mode: 'server')
 import nuxt_plugin_pluginclient_318b7c81 from 'nuxt_plugin_pluginclient_318b7c81' // Source: ./color-mode/plugin.client.js (mode: 'client')
 import nuxt_plugin_markdown_667a7ee3 from 'nuxt_plugin_markdown_667a7ee3' // Source: ../node_modules/@nuxt/content-theme-docs/src/plugins/markdown (mode: 'all')
@@ -56,7 +57,11 @@ Vue.component(Nuxt.name, Nuxt)
 
 Object.defineProperty(Vue.prototype, '$nuxt', {
   get() {
-    return this.$root.$options.$nuxt
+    const globalNuxt = this.$root.$options.$nuxt
+    if (process.client && !globalNuxt && typeof window !== 'undefined') {
+      return window.$nuxt
+    }
+    return globalNuxt
   },
   configurable: true
 })
@@ -66,14 +71,18 @@ Vue.use(Meta, {"keyName":"head","attribute":"data-n-head","ssrAttribute":"data-n
 const defaultTransition = {"name":"page","mode":"out-in","appear":false,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}
 
 const originalRegisterModule = Vuex.Store.prototype.registerModule
-const baseStoreOptions = { preserveState: process.client }
 
 function registerModule (path, rawModule, options = {}) {
-  return originalRegisterModule.call(this, path, rawModule, { ...baseStoreOptions, ...options })
+  const preserveState = process.client && (
+    Array.isArray(path)
+      ? !!path.reduce((namespacedState, path) => namespacedState && namespacedState[path], this.state)
+      : path in this.state
+  )
+  return originalRegisterModule.call(this, path, rawModule, { preserveState, ...options })
 }
 
 async function createApp(ssrContext, config = {}) {
-  const router = await createRouter(ssrContext)
+  const router = await createRouter(ssrContext, config)
 
   const store = createStore(ssrContext)
   // Add this.$router into store actions/mutations
@@ -87,7 +96,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"}],"link":[{"rel":"dns-prefetch","href":"https:\u002F\u002Ffonts.gstatic.com\u002F"},{"rel":"preconnect","href":"https:\u002F\u002Ffonts.gstatic.com\u002F","crossorigin":true},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=DM+Sans&family=DM+Mono"}],"style":[],"script":[{"hid":"nuxt-color-mode-script","innerHTML":"!function (){\"use strict\";var e=window,s=document,t=s.documentElement,n=[\"dark\",\"light\"],o=function(e){for(var t=e+\"=\",n=s.cookie.split(\";\"),o=0;o\u003Cn.length;o++){for(var a=n[o];\" \"===a.charAt(0);)a=a.substring(1,a.length);if(0===a.indexOf(t))return a.substring(t.length,a.length)}return null}(\"nuxt-color-mode\")||\"system\",a=\"system\"===o?c():o;function i(e){var s=\"\"+e+\"-mode\";t.classList?t.classList.add(s):t.className+=\" \"+s}function r(s){return e.matchMedia(\"(prefers-color-scheme\"+s+\")\")}function c(){if(e.matchMedia&&\"not all\"!==r(\"\").media)for(var s of n)if(r(\":\"+s).matches)return s;return\"light\"}i(a),e[\"__NUXT_COLOR_MODE__\"]={preference:o,value:a,getColorScheme:c,addClass:i,removeClass:function(e){var s=\"\"+e+\"-mode\";t.classList?t.classList.remove(s):t.className=t.className.replace(new RegExp(s,\"g\"),\"\")}}}();\n","pbody":true}],"__dangerouslyDisableSanitizersByTagID":{"nuxt-color-mode-script":["innerHTML"]}},
+    head: {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"}],"link":[{"rel":"dns-prefetch","href":"https:\u002F\u002Ffonts.gstatic.com\u002F"},{"rel":"preconnect","href":"https:\u002F\u002Ffonts.gstatic.com\u002F","crossorigin":true},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=DM+Sans&family=DM+Mono"}],"style":[],"script":[{"hid":"nuxt-color-mode-script","innerHTML":"!function(){\"use strict\";var e=window,s=document,t=s.documentElement,n=[\"dark\",\"light\"],o=function(e){for(var t=e+\"=\",n=s.cookie.split(\";\"),o=0;o\u003Cn.length;o++){for(var a=n[o];\" \"===a.charAt(0);)a=a.substring(1,a.length);if(0===a.indexOf(t))return a.substring(t.length,a.length)}return null}(\"nuxt-color-mode\")||\"system\",a=\"system\"===o?c():o;function i(e){var s=\"\"+e+\"-mode\";t.classList?t.classList.add(s):t.className+=\" \"+s}function r(s){return e.matchMedia(\"(prefers-color-scheme\"+s+\")\")}function c(){if(e.matchMedia&&\"not all\"!==r(\"\").media)for(var s of n)if(r(\":\"+s).matches)return s;return\"light\"}i(a),e[\"__NUXT_COLOR_MODE__\"]={preference:o,value:a,getColorScheme:c,addClass:i,removeClass:function(e){var s=\"\"+e+\"-mode\";t.classList?t.classList.remove(s):t.className=t.className.replace(new RegExp(s,\"g\"),\"\")}}}();\n","pbody":true}],"__dangerouslyDisableSanitizersByTagID":{"nuxt-color-mode-script":["innerHTML"]}},
 
     store,
     router,
@@ -228,6 +237,10 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_pluginserver_f046bd7e(app.context, inject)
   }
 
+  if (typeof nuxt_plugin_pluginutils_fc179570 === 'function') {
+    await nuxt_plugin_pluginutils_fc179570(app.context, inject)
+  }
+
   if (typeof nuxt_plugin_pluginrouting_e886deda === 'function') {
     await nuxt_plugin_pluginrouting_e886deda(app.context, inject)
   }
@@ -240,12 +253,12 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_workbox_05ddd4a2(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_meta_387c672b === 'function') {
-    await nuxt_plugin_meta_387c672b(app.context, inject)
+  if (typeof nuxt_plugin_metaplugin_154d3dc2 === 'function') {
+    await nuxt_plugin_metaplugin_154d3dc2(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_icons_73e67338 === 'function') {
-    await nuxt_plugin_icons_73e67338(app.context, inject)
+  if (typeof nuxt_plugin_iconplugin_19f4e336 === 'function') {
+    await nuxt_plugin_iconplugin_19f4e336(app.context, inject)
   }
 
   if (process.server && typeof nuxt_plugin_pluginserver_d17623ee === 'function') {
@@ -283,26 +296,33 @@ async function createApp(ssrContext, config = {}) {
     }
   }
 
-  // If server-side, wait for async component to be resolved first
-  if (process.server && ssrContext && ssrContext.url) {
-    await new Promise((resolve, reject) => {
-      router.push(ssrContext.url, resolve, (err) => {
-        // https://github.com/vuejs/vue-router/blob/v3.4.3/src/util/errors.js
-        if (!err._isRouter) return reject(err)
-        if (err.type !== 2 /* NavigationFailureType.redirected */) return resolve()
+  // Wait for async component to be resolved first
+  await new Promise((resolve, reject) => {
+    // Ignore 404s rather than blindly replacing URL in browser
+    if (process.client) {
+      const { route } = router.resolve(app.context.route.fullPath)
+      if (!route.matched.length) {
+        return resolve()
+      }
+    }
+    router.replace(app.context.route.fullPath, resolve, (err) => {
+      // https://github.com/vuejs/vue-router/blob/v3.4.3/src/util/errors.js
+      if (!err._isRouter) return reject(err)
+      if (err.type !== 2 /* NavigationFailureType.redirected */) return resolve()
 
-        // navigated to a different route in router guard
-        const unregister = router.afterEach(async (to, from) => {
+      // navigated to a different route in router guard
+      const unregister = router.afterEach(async (to, from) => {
+        if (process.server && ssrContext && ssrContext.url) {
           ssrContext.url = to.fullPath
-          app.context.route = await getRouteData(to)
-          app.context.params = to.params || {}
-          app.context.query = to.query || {}
-          unregister()
-          resolve()
-        })
+        }
+        app.context.route = await getRouteData(to)
+        app.context.params = to.params || {}
+        app.context.query = to.query || {}
+        unregister()
+        resolve()
       })
     })
-  }
+  })
 
   return {
     store,
