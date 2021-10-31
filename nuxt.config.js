@@ -9,6 +9,6 @@ export default theme({
     '@@/assets/main.css'
   ],
   docs: {
-    primaryColor: '#f38aff'
+    primaryColor: '#D329FF'
   },
 });

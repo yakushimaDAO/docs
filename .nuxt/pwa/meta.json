@@ -33,7 +33,7 @@
     {
       "hid": "theme-color",
       "name": "theme-color",
-      "content": "#f38aff"
+      "content": "#D329FF"
     },
     {
       "hid": "og:type",
@@ -64,17 +64,17 @@
     {
       "hid": "shortcut-icon",
       "rel": "shortcut icon",
-      "href": "/_nuxt/icons/icon_64x64.17a102.png"
+      "href": "/_nuxt/icons/icon_64x64.5adb17.png"
     },
     {
       "hid": "apple-touch-icon",
       "rel": "apple-touch-icon",
-      "href": "/_nuxt/icons/icon_512x512.17a102.png",
+      "href": "/_nuxt/icons/icon_512x512.5adb17.png",
       "sizes": "512x512"
     },
     {
       "rel": "manifest",
-      "href": "/_nuxt/manifest.db573f80.json",
+      "href": "/_nuxt/manifest.2fc8c520.json",
       "hid": "manifest"
     }
   ],
