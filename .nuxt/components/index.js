@@ -1,3 +1,4 @@
+export { default as AppColorSwitcher } from '../../node_modules/@nuxt/content-theme-docs/src/components/global/app/AppColorSwitcher.vue'
 export { default as Alert } from '../../node_modules/@nuxt/content-theme-docs/src/components/global/base/Alert.vue'
 export { default as Badge } from '../../node_modules/@nuxt/content-theme-docs/src/components/global/base/Badge.vue'
 export { default as CodeBlock } from '../../node_modules/@nuxt/content-theme-docs/src/components/global/base/CodeBlock.vue'
@@ -25,7 +26,6 @@ export { default as IconTranslate } from '../../node_modules/@nuxt/content-theme
 export { default as IconTwitter } from '../../node_modules/@nuxt/content-theme-docs/src/components/global/icons/IconTwitter.vue'
 export { default as IconX } from '../../node_modules/@nuxt/content-theme-docs/src/components/global/icons/IconX.vue'
 export { default as IconXCircle } from '../../node_modules/@nuxt/content-theme-docs/src/components/global/icons/IconXCircle.vue'
-export { default as AppColorSwitcher } from '../../node_modules/@nuxt/content-theme-docs/src/components/global/app/AppColorSwitcher.vue'
 export { default as AppCopyButton } from '../../node_modules/@nuxt/content-theme-docs/src/components/app/AppCopyButton.vue'
 export { default as AppDropdown } from '../../node_modules/@nuxt/content-theme-docs/src/components/app/AppDropdown.vue'
 export { default as AppFooter } from '../../node_modules/@nuxt/content-theme-docs/src/components/app/AppFooter.vue'

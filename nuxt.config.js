@@ -8,6 +8,16 @@ export default theme({
    css: [
     '@@/assets/main.css'
   ],
+  modules: [
+    '@nuxtjs/gtm',
+  ],
+  gtm: {
+    pageTracking: true,
+    respectDoNotTrack: false,
+    id: 'GTM-NBW9826',
+    variables: {
+    }
+  },
   docs: {
     primaryColor: '#D329FF'
   },
