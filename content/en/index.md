@@ -6,9 +6,9 @@ fullscreen: true
 position: 1
 ---
 
-## What is Yakushima DAO ?
+As a team, we are Solana NFT natives. We have experienced the highs of a good flip and seeing a collection you have been diamond handing finally take off. We have also experienced the lows of a hard rug or a project that slowly dwindles due to lack of owner activity.
 
-It comes from a simple idea: How to revolutionize the Manga / Gaming ultra-centralized business as early adopters of new decentralized blockchain-based tools. We’re huge geeks fans of japan & cyberpunk universe and are influenced by Japanese anime/manga masterpieces such as Shingeki no kyojin, Death Note, Tokyo Ghoul, and obviously DragonBall, Ghost in the Shell… We wanted to create our own universe in a cyberpunk world with the finest Japanese legends and Geeks winks.
-or that, we surrounded ourselves with talented mangakas and 2D animators for the creation of a manga and an anime. As well as 3D & Unreal Engine developers for the creation of characters, weapons, vehicles based on our history … Fully usable in the metaverse or in a future video game.
-We still have a lot of work to do! And we need you to co-develop this amazing universe and the on-going DAO. Quality takes time, that is why we are relying on you!
-🤖 Because we’re not waiting to sell NFTs to work, we’re starting our projects now. So Humans, please take place to 3 awsome projects, i’ll be back… 🤖 
+Our North Star for this project is to provide the best Metaverse experience we can for the entire Solana ecosystem, getting as many other positive contributors in the space involved as we can, and to stay true to our anime and cyberpunk inspirations.
+We understand this is a large undertaking, but we are committed to continually innovating and elevating the experience in the Yakuverse alongside our holders. We have collaborated with the community from the beginning and will only double down on this collaboration in the future. We are building our own world, together, and on an infinite timeline, there is nothing we cannot accomplish.
+
+Let’s create the dopest Metaverse where all Solana communities could play around.
