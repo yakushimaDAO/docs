@@ -1,5 +1,5 @@
 ---
-title: Share & Burn !!!!
+title: Shares & Burn !!!!
 category: Tokenomic
 position: 7
 ---

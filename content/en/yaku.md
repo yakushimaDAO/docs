@@ -12,7 +12,7 @@ The $YAKU token is packed with utility in the Yakuverse. For this reason, it is 
 
 * All $YAKU will be in circulation within 2 years of the intended launch day, day 1 of 2nd Step 2022.
 
-## General Info
+## General Infos
 
 The $YAKU token’s liquidity will be built using a portion of income from direct $SOL sales.
 
