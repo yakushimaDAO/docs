@@ -9,8 +9,12 @@ position: 5
 * Staking your collections: you will receive: 
 
     - 2 $YAKU per day for every motorcycle
+        Tier 1 (Kosoku samarukyanon Weapon) = +50% bonus
+        Tiers 2 (Supercharger Engine) = +20% bonus
+    - 6 $YAKU per day for every capsule.
+        Tier 1 (Galactic Penthouse) = +50% bonus
+        Tiers 2 (Space Suite) = +20% bonus
     - 4 $YAKU per day for every avatar
-    - 6 $YAKU per day for every capsule. 
 
 An additional 12 $YAKU per day for each complete set of three you are holding
 
