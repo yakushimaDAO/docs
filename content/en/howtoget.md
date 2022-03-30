@@ -6,7 +6,7 @@ position: 5
 
 ## There will be 3 primary ways to acquire $YAKU within the Yakuverse
 
-* Holding your collections: On launch day, daily airdrops of $YAKU will begin. For every day you have your holdings delisted, you will receive: 
+* Staking your collections: you will receive: 
 
     - 2 $YAKU per day for every motorcycle
     - 4 $YAKU per day for every avatar
@@ -14,7 +14,6 @@ position: 5
 
 An additional 12 $YAKU per day for each complete set of three you are holding
 
-* Staking your motorcycle: On launch day, you will be able to stake your motorcycle(s) in your garage. You will receive 6 $YAKU per day, per bike in addition to the standard 2 per day for holding.
 * Racing your motorcycle: Every first place finish grants the winner 3 $YAKU, second place 2 $YAKU and third place 1 $YAKU
 
 ## In a two year timeline, this will mean: 
