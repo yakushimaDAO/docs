@@ -9,6 +9,9 @@ position: 5
 * Staking your collections: you will receive: 
 
     - 2 $YAKU per day for every motorcycle
+        Tiers are based on HowRare.is rarity (with normalize traits and statistical rarity toggled) :
+        Tier1 = 1 to 350 => +50%
+        Tier2 = 351 to 2100 => +20%
         Tier 1 (Kosoku samarukyanon Weapon) = +50% bonus
         Tiers 2 (Supercharger Engine) = +20% bonus
     - 6 $YAKU per day for every capsule.
