@@ -4,7 +4,7 @@ category: Tokenomic
 position: 8
 ---
 
-With the implementation of customization, many have wondered if the rarity of their bikes will be altered or diminished. Given the information regarding tiers for upgrade purchases, we want to assure our holders that rare upgrades will be significantly more difficult to acquire. However, to maintain the “sanctity” of the mint, no rare cosmetic attributes that were minted will be able to be purchased in the Yaku store. Any minted motocycles or avatar with an attribute that is found on fewer than 10% of the total supply will be available for purchase through the Yaku store.
+With the implementation of customization, many have wondered if the rarity of their bikes will be altered or diminished. Given the information regarding tiers for upgrade purchases, we want to assure our holders that rare upgrades will be significantly more difficult to acquire. However, to maintain the “sanctity” of the mint, no rare cosmetic attributes that were minted will be able to be purchased in the Yaku store. Any minted motocycles or avatar with an attribute that is found on fewer than 10% of the total supply will not be available for purchase through the Yaku store.
 
 We will, inevitably, roll out new upgrades that are even more rare and potentially more desirable than some mint traits, but we understand your first love is important.
 
